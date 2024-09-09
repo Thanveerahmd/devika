@@ -1,0 +1,27 @@
+#!/bin/sh
+echo "Setting up devika server!!!"
+
+echo "Cleaning up previous setup!!!"
+rm -rf .venv
+rm -rf ui/node_modules
+rm -rf ui/dist
+rm -rf ui/build
+rm -rf ui/public
+rm -rf ui/.bun
+rm -rf ui/.bunfig.toml
+rm -rf ui/.eslintrc.json
+rm -rf ui/.eslintrc.json
+
+echo "Setting up python environment!!!"
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+pip list
+playwright install
+python3 -m playwright install-deps
+
+echo "Setting up devika frontend!!!"
+cd ui/
+bun install
+
+echo "project initiation completed!!!"

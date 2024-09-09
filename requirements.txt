@@ -1,3 +1,5 @@
+numpy<2                  # Downgraded to support modules built with NumPy 1.x
+torch>=2.0.0             # Compatible with NumPy < 2
 flask
 flask-cors
 toml
